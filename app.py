@@ -54,18 +54,15 @@ st.markdown(
         display: flex; 
         justify-content: flex-start;
         align-items: center; 
-        /* KÉO LOGO & SLOGAN VỀ GIỮA 1 TÍ BẰNG CÁCH TĂNG PADDING HAI BÊN */
         padding: 35px 12%; 
         position: relative;
         min-height: 125px;
-        /* Nền chuyển dần từ trắng sang xanh dương nhạt ở góc phải */
         background: linear-gradient(90deg, #ffffff 40%, #eef6ff 100%);
         border-bottom: 1px solid rgba(226, 232, 240, 0.8);
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
         overflow: hidden;
     }
 
-    /* HIỆU ỨNG 1: ABSTRACT NEURAL LINES (ĐƯỜNG MẠNG LƯỚI AI UỐN CONG) */
     .app-header::before {
         content: '';
         position: absolute;
@@ -73,7 +70,6 @@ st.markdown(
         right: 0;
         width: 55%;
         height: 100%;
-        /* Vẽ các đường cong Neural & Dots bằng SVG nhúng trực tiếp */
         background-image: url("data:image/svg+xml,%3Csvg width='100%25' height='100%25' viewBox='0 0 800 200' preserveAspectRatio='xMaxYMid slice' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 0 180 C 200 120, 400 200, 800 50' fill='none' stroke='%2300C8FF' stroke-width='2' stroke-opacity='0.4'/%3E%3Cpath d='M 100 250 C 300 100, 500 50, 800 150' fill='none' stroke='%230F3D91' stroke-width='1.5' stroke-opacity='0.3'/%3E%3Cpath d='M -50 100 C 150 150, 350 0, 800 80' fill='none' stroke='%230F3D91' stroke-width='1' stroke-opacity='0.2'/%3E%3Ccircle cx='200' cy='120' r='3' fill='%230F3D91' fill-opacity='0.5'/%3E%3Ccircle cx='400' cy='200' r='4' fill='%2300C8FF' fill-opacity='0.5'/%3E%3Ccircle cx='300' cy='100' r='2.5' fill='%230F3D91' fill-opacity='0.5'/%3E%3Ccircle cx='500' cy='50' r='3' fill='%230F3D91' fill-opacity='0.4'/%3E%3Ccircle cx='150' cy='150' r='2' fill='%230F3D91' fill-opacity='0.4'/%3E%3Cpath d='M 200 120 L 300 100' fill='none' stroke='%230F3D91' stroke-width='0.5' stroke-opacity='0.3'/%3E%3Cpath d='M 300 100 L 500 50' fill='none' stroke='%230F3D91' stroke-width='0.5' stroke-opacity='0.3'/%3E%3Cpath d='M 400 200 L 500 50' fill='none' stroke='%230F3D91' stroke-width='0.5' stroke-opacity='0.3'/%3E%3C/svg%3E");
         background-size: cover;
         background-position: right center;
@@ -82,7 +78,6 @@ st.markdown(
         pointer-events: none;
     }
 
-    /* HIỆU ỨNG 2: VÙNG ÁNH SÁNG BLUR MỜ & LƯỚI DOT GRID GÓC PHẢI */
     .app-header::after {
         content: '';
         position: absolute;
@@ -91,26 +86,21 @@ st.markdown(
         width: 60%;
         height: 200%;
         background: 
-            /* Ánh sáng Cyan nhạt */
             radial-gradient(ellipse at 80% 30%, rgba(0, 200, 255, 0.15) 0%, transparent 50%),
-            /* Ánh sáng Navy đậm mờ */
             radial-gradient(ellipse at 100% 70%, rgba(15, 61, 145, 0.1) 0%, transparent 60%),
-            /* Lưới Dot Grid */
             radial-gradient(rgba(15, 61, 145, 0.15) 1px, transparent 1px);
         background-size: 100% 100%, 100% 100%, 20px 20px;
         z-index: 0;
-        /* Xóa viền gắt của lưới để nó hòa quyện vào nền trắng */
         mask-image: linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
         -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
         pointer-events: none;
     }
 
-    /* VÙNG NỘI DUNG HEADER CHÍNH */
     .header-content-container {
         display: flex;
         align-items: center;
         gap: 22px;
-        z-index: 10; /* Nằm trên lớp hiệu ứng nền */
+        z-index: 10; 
         position: relative;
     }
 
@@ -136,7 +126,7 @@ st.markdown(
         font-family: 'Manrope', sans-serif; 
         font-size: 40px; 
         font-weight: 800; 
-        color: #0F3D91; /* Xanh Navy Y Khoa */
+        color: #0F3D91; 
         line-height: 1; 
         letter-spacing: -0.5px;
     }
@@ -148,7 +138,6 @@ st.markdown(
         margin: 0 16px;
     }
 
-    /* BADGE CHUẨN SAAS (Bo góc nhẹ, màu tinh tế) */
     .app-badge {
         background-color: #e0e7ff;
         color: #3730a3;
@@ -178,7 +167,6 @@ st.markdown(
         margin-top: 2px;
     }
 
-    /* --- CONTAINERS & CARDS --- */
     div[data-testid="stVerticalBlockBorderWrapper"] {
         background-color: white; border-radius: 16px;
         border: 1px solid #e2e8f0; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02); padding: 25px;
@@ -196,7 +184,6 @@ st.markdown(
     .card-title { font-size: 1.15rem; font-weight: 700; margin-bottom: 6px; color: #1e293b; }
     .card-desc { font-size: 0.95rem; color: #64748b; line-height: 1.5; }
 
-    /* --- PATIENT PROFILE --- */
     .profile-header-bg {
         background: linear-gradient(135deg, #0F3D91 0%, #3b82f6 100%); color: white;
         padding: 25px; border-radius: 12px 12px 0 0;
@@ -206,7 +193,6 @@ st.markdown(
         border: 1px solid #cbd5e1; border-top: none; border-radius: 0 0 12px 12px;
     }
 
-    /* --- NÚT BẤM --- */
     div.stButton > button {
         width: 100% !important; 
         border-radius: 12px; height: 60px; font-size: 18px;
@@ -214,9 +200,6 @@ st.markdown(
     }
     div[data-baseweb="select"] > div { font-size: 18px; min-height: 55px; }
 
-    /* ========================================================
-       NATIVE HTML CHAT UI
-       ======================================================== */
     .custom-chat-wrapper {
         display: flex; flex-direction: column; gap: 20px; padding: 10px 5px;
     }
@@ -264,7 +247,6 @@ if "is_generating" not in st.session_state:
     st.session_state.is_generating = False
 
 
-# Hàm hỗ trợ đọc ảnh và chuyển sang Base64
 def get_base64_image(image_path):
     try:
         with open(image_path, "rb") as img_file:
@@ -273,12 +255,10 @@ def get_base64_image(image_path):
         return ""
 
 
-# --- 4. HEADER COMPONENT MỚI ---
 def render_header():
     logo_path = "assets/images/logo.png"
     base64_logo = get_base64_image(logo_path)
 
-    # Nếu không tìm thấy file logo local, dùng tạm icon răng xanh mượt mà trên mạng
     img_src = (
         f"data:image/png;base64,{base64_logo}"
         if base64_logo
@@ -335,13 +315,9 @@ if not st.session_state.case:
             st.write("")
 
             if st.button(" BẮT ĐẦU CA MỚI", type="primary"):
-                # ==========================================
-                # SET ƯU TIÊN KỊCH BẢN DEMO (HARDCODE LOGIC)
-                # ==========================================
                 target_case = None
 
                 if cat_filter == "Nội Nha":
-                    # Ưu tiên lấy ca Nguyễn Văn Nam (ENDO_01)
                     target_case = next(
                         (
                             c
@@ -351,7 +327,6 @@ if not st.session_state.case:
                         None,
                     )
                 elif cat_filter == "Chấn Thương":
-                    # Ưu tiên lấy ca Phạm Văn Tài (TRAUMA_02)
                     target_case = next(
                         (
                             c
@@ -365,7 +340,6 @@ if not st.session_state.case:
                     selected_case = target_case
                 else:
                     selected_case = random.choice(candidates)
-                # ==========================================
 
                 st.session_state.case = selected_case
                 st.session_state.history = []
@@ -437,7 +411,6 @@ else:
 
         st.write("")
 
-        # HÌNH ẢNH CẬN LÂM SÀNG
         with st.container(border=True):
             st.markdown("### 📷 Hình ảnh Cận lâm sàng")
 
@@ -478,7 +451,6 @@ else:
                     with st.expander("Xem giải thích chi tiết"):
                         st.write(case["explanation"])
 
-    # --- CỘT PHẢI: KHUNG CHAT HTML TÙY CHỈNH ---
     with col_chat:
         chat_container = st.container(height=750, border=True)
 
@@ -501,9 +473,32 @@ else:
                             <div class="chat-avatar">👤</div>
                             <div class="chat-bubble bot-bubble">{text}</div>
                         </div>"""
+
+                # --- ĐÃ XÓA MỌI DẤU VẾT CỦA COMPONENTS.HTML ---
+
+                # --- THỦ THUẬT AUTO-SCROLL ĐẢM BẢO HOẠT ĐỘNG 100% ---
+                # Sinh ID ngẫu nhiên mỗi lần render để tránh bị React Cache bỏ qua event
+                anchor_id = f"chat-bottom-{random.randint(10000, 99999)}"
+                html += f"<div id='{anchor_id}' style='height: 1px;'></div>"
                 html += "</div>"
+
+                # Ép trình duyệt cuộn mượt xuống mỏ neo bằng vòng lặp nhỏ để vượt qua độ trễ DOM của Streamlit
+                html += f"""
+                <img src="dummy-{anchor_id}.png" style="display:none" onerror="
+                    let ticks = 0;
+                    let scrollInterval = setInterval(() => {{
+                        let el = document.getElementById('{anchor_id}');
+                        if (el) {{
+                            el.scrollIntoView({{behavior: 'smooth', block: 'end'}});
+                        }}
+                        ticks++;
+                        if (ticks > 10) clearInterval(scrollInterval);
+                    }}, 150);
+                ">
+                """
                 return html
 
+            # Hiển thị giao diện Chat
             chat_placeholder.markdown(
                 render_chat(st.session_state.history), unsafe_allow_html=True
             )
